@@ -1,7 +1,4 @@
-
-
 d3.csv("../alphabet.csv").then(function(data) {
-
 const width = 928;
 const height = 500;
 const marginTop = 30;
