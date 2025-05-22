@@ -1,10 +1,12 @@
-d3.csv("../alphabet.csv").then(function(data) {
+const container = d3.select("#container")
+d3.csv("alphabet.csv").then(function(data) {
 const width = 928;
 const height = 500;
 const marginTop = 30;
 const marginRight = 0;
 const marginBottom = 30;
 const marginLeft = 40;
+console.log(data)
 
 // Declare the x (horizontal position) scale.
 const x = d3.scaleBand()
@@ -18,7 +20,7 @@ const y = d3.scaleLinear()
     .range([height - marginBottom, marginTop]);
 
 // Create the SVG container.
-const svg = d3.create("svg")
+const svg = container.append("svg")
     .attr("width", width)
     .attr("height", height)
     .attr("viewBox", [0, 0, width, height])
@@ -51,5 +53,6 @@ svg.append("g")
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
         .text("↑ Frequency (%)"));
+
 });
 //data = FileAttachment("../../alphabet.csv").csv({typed: "auto"})
