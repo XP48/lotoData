@@ -1,8 +1,153 @@
-/* colors */
-:root {
-    --black-bean: #250902ff;
-    --black-bean-2: #38040eff;
-    --rosewood: #640d14ff;
-    --falu-red: #800e13ff;
-    --auburn: #ad2831ff;
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #19163b;
+}
+
+header {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  margin-top: 15vh;
+  font-family: "Lalezar";
+  font-size: 200px;
+  color: #fff;
+  line-height: 0.7;
+}
+
+p {
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Placement des boulles sur page d'accueil */
+
+#a31 {
+  top: 10vh;
+  left: 85vw;
+}
+#a33 {
+  top: 75vh;
+  left: 70vw;
+}
+#a25 {
+  top: 60vh;
+  left: 55vw;
+  width: 75px;
+}
+#a22 {
+  top: 85vh;
+  left: 90vw;
+  width: 150px;
+}
+#a17 {
+  top: 50vh;
+  left: 80vw;
+  width: 125px;
+}
+#a15 {
+  top: 30vh;
+  left: 64vw;
+}
+
+#b31 {
+  top: 70vh;
+  left: 10vw;
+  width: 125px;
+}
+#b33 {
+  top: 5vh;
+  left: 15vw;
+  width: 75px;
+}
+#b25 {
+  top: 35vh;
+  left: 5vw;
+  width: 175px;
+}
+#b22 {
+  top: 48vh;
+  left: 30vw;
+  width: 60px;
+}
+#b17 {
+  top: 90vh;
+  left: 25vw;
+  width: 100px;
+}
+#b15 {
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+/* Animation des boulles sur page d'accueil */
+
+.ball {
+  position: fixed;
+  animation: rotate 45s linear infinite;
+}
+
+.ball.reverse {
+  animation: rotate-inverse 50s linear infinite;
+}
+
+.ball img,
+.reverse img {
+  width: 100px;
+  animation: float 5s ease-in-out infinite;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+}
+.delay-1 {
+  animation-delay: 1s;
+}
+.delay-2 {
+  animation-delay: 2s;
+}
+.delay-3 {
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-inverse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
