@@ -1,17 +1,31 @@
-d3.csv("./src/data/loto_201911.csv").then(function(data) {
+const csv = d3.dsvFormat(";");
+
+d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     const page = d3.select("#container")
 
-    marginLeft=0;
+    const numeros_chance = d3.rollup(data, v => d3.count(v, d => d.numero_chance), d => d.numero_chance)
+    console.log(numeros_chance)
+
+    marginLeft=50;
     width=1000;
     marginRight=0;
+    marginBottom=20;
     height=1000;
     const scaleX = d3.scaleBand()
-        .domain([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) // descending frequency
+        // .domain(numeros_chance.map(d => parseInt(d.numero_chance)).sort())
+        .domain(["1","2","3","4","5","6","7","8","9", "10"])
         .range([marginLeft, width - marginRight])
         .padding(0.1);
 
     const scaleY = d3.scaleLinear()
-        .domain([0, d3.max(data, (d) => count(d.numero_chance))])
+        .domain([0, 150])
+        .range([height, 0])
+
+        
+    // const scaleY = d3.scaleLinear()
+    // .domain([0, d3.max(data, (d) => d3.count(d.numero_chance))])
+
+    
 
     const svg = page.append("svg")
         .attr("width", width)
@@ -22,20 +36,23 @@ d3.csv("./src/data/loto_201911.csv").then(function(data) {
     svg.append("g")
         .attr("fill", "steelblue")
         .selectAll()
-        .data(data)
+        .data(numeros_chance)
         .join("rect")
-        .attr("x", (d) => scaleX(d.numero_chance))
-        .attr("y", (d) => scaleY(count(d.numero_chance)))
-        .attr("height", (d) => y(0) - y(d.frequency))
-        .attr("width", x.bandwidth());
+        .attr("x", (d) => scaleX(d[0]))
+        // .attr("y", (d) => height-marginBottom-scaleY(d[1]))
+        .attr("y", (d) => scaleY(d[1]))
+        .attr("height", d => scaleY(0) - scaleY(d[1]))
+        // .attr("y", (d) => scaleY(1000))
+        // .attr("height", (d) => scaleY(d[1]))
+        .attr("width", scaleX.bandwidth())
 
     svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(d3.axisBottom(x).tickSizeOuter(0));
+        .attr("transform", `translate(${0},${height - marginBottom})`)
+        .call(d3.axisBottom(scaleX).tickSizeOuter(0));
 
     svg.append("g")
     .attr("transform", `translate(${marginLeft},0)`)
-    .call(d3.axisLeft(y).tickFormat((y) => (y * 100).toFixed()))
+    .call(d3.axisLeft(scaleY).tickFormat((y) => (y).toFixed()))
     .call(g => g.select(".domain").remove())
     .call(g => g.append("text")
         .attr("x", -marginLeft)
