@@ -180,25 +180,56 @@ header a {
   height: 60vh;
   background-color: rgb(106, 194, 235);
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  gap: 25px;
+}
+
+.grille p{
+  font-size: 24px;
 }
 
 .grille1{
   width: 18%;
-  height: 100%;
+  height: 52vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #19163b;
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .numero {
   background-color: #fff;
-  height: 100%;
-  width: 60%;
+  height: 40vh;
+  width: 100%;
   border-radius: 15px;
   border: solid red 2px;
 }
 
 .numero-chance {
   background-color: #fff;
-  height: 15%;
-  width: 18%;
+  height: 15vh;
+  width: 100%;
   border-radius: 15px;
   border: solid red 2px;
+}
+
+.grille1 p{
+  margin: 8px 0 0 0;
+  background-color: red;
+  border-radius: 10px 10px 0 0;
+  padding: 3px;
+}
+
+.case {
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: solid 2px red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
