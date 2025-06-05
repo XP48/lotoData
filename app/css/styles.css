@@ -7,11 +7,11 @@
 
 html {
 	scroll-behavior: smooth;
+  scrollbar-width: none
 }
 
 body {
   background-color: #19163b;
-  overflow: hidden
 }
 
 header {
