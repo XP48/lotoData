@@ -6,7 +6,7 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
 
     marginLeft=50;
     width=1000;
-    marginRight=50;
+    marginRight=60;
     marginBottom=20;
     marginTop=45
     height=1000;
@@ -33,15 +33,17 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
         .attr("style", "max-width: 100%; height: auto;");
     
     svg.append("g")
-        .attr("fill", "steelblue")
+        .attr("fill", "#19163b")
         .attr("transform", `translate(0, ${-marginBottom})`)
         .selectAll()
         .data(numeros_chance)
         .join("rect")
         .attr("x", (d) => scaleX(d[0]))
         // .attr("y", (d) => height-marginBottom-scaleY(d[1]))
-        .attr("y", (d) => scaleY(d[1]))
-        .attr("height", d => scaleY(0) - scaleY(d[1]))
+        // .attr("y", (d) => scaleY(d[1]))
+        .attr("y", height)
+        // .attr("height", d => scaleY(0) - scaleY(d[1]))
+        .attr("height", 0)
         // .attr("y", (d) => scaleY(1000))
         // .attr("height", (d) => scaleY(d[1]))
         .attr("width", scaleX.bandwidth())
@@ -50,11 +52,11 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
         .attr("transform", `translate(${0},${height - marginBottom})`)
         .call(d3.axisBottom(scaleX).tickSizeOuter(0))
         .call(g => g.append("text")
-        .attr("x", width-marginRight)
+        .attr("x", width-(marginRight*1.5))
         .attr("y", 20)
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
-        .text("N° chance"));
+        .text("→ N° chance"));
         
 
     svg.append("g")
@@ -67,5 +69,14 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
         .text("↑ Nombre d'apparition"));
+
+    // Animation
+    svg.selectAll("rect")
+        .transition()
+        .duration(800)
+        .attr("y", d => scaleY(d[1]))
+        .attr("height", d => height - scaleY(d[1]))
+        .delay((d,i) => {console.log(i); return i*100})
+        .style("fill", "rgb(106,194,235)");
 
 });
