@@ -1,5 +1,15 @@
 const numero = document.getElementById("numero")
 const numero_chance = document.getElementById("numero-chance")
+
+const numeroDisabled = document.getElementById("numero2")
+const numero_chanceDisabled = document.getElementById("numero-chance2")
+const numeroDisabled2 = document.getElementById("numero2")
+const numero_chanceDisabled2 = document.getElementById("numero-chance2")
+const numeroDisabled3 = document.getElementById("numero2")
+const numero_chanceDisabled3 = document.getElementById("numero-chance2")
+const numeroDisabled4 = document.getElementById("numero2")
+const numero_chanceDisabled4 = document.getElementById("numero-chance2")
+
 const numListe = [];
 const numChanceListe = [];
 const MAX_NUM = 5
