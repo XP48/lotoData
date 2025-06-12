@@ -1,5 +1,3 @@
-const csv = d3.dsvFormat(";");
-
 d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     const page = d3.select("#container")
 
@@ -8,17 +6,18 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
 
     marginLeft=50;
     width=1000;
-    marginRight=0;
+    marginRight=50;
     marginBottom=20;
+    marginTop=45
     height=1000;
     const scaleX = d3.scaleBand()
         // .domain(numeros_chance.map(d => parseInt(d.numero_chance)).sort())
         .domain(["1","2","3","4","5","6","7","8","9", "10"])
         .range([marginLeft, width - marginRight])
-        .padding(0.1);
+        .padding(0.3);
 
     const scaleY = d3.scaleLinear()
-        .domain([0, 150])
+        .domain([0, 120])
         .range([height, 0])
 
         
@@ -35,6 +34,7 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     
     svg.append("g")
         .attr("fill", "steelblue")
+        .attr("transform", `translate(0, ${-marginBottom})`)
         .selectAll()
         .data(numeros_chance)
         .join("rect")
@@ -48,17 +48,24 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
 
     svg.append("g")
         .attr("transform", `translate(${0},${height - marginBottom})`)
-        .call(d3.axisBottom(scaleX).tickSizeOuter(0));
+        .call(d3.axisBottom(scaleX).tickSizeOuter(0))
+        .call(g => g.append("text")
+        .attr("x", width-marginRight)
+        .attr("y", 20)
+        .attr("fill", "currentColor")
+        .attr("text-anchor", "start")
+        .text("N° chance"));
+        
 
     svg.append("g")
-    .attr("transform", `translate(${marginLeft},0)`)
+    .attr("transform", `translate(${marginLeft},${-marginBottom})`)
     .call(d3.axisLeft(scaleY).tickFormat((y) => (y).toFixed()))
     .call(g => g.select(".domain").remove())
     .call(g => g.append("text")
         .attr("x", -marginLeft)
-        .attr("y", 10)
+        .attr("y", marginTop)
         .attr("fill", "currentColor")
         .attr("text-anchor", "start")
-        .text("↑ Frequency (%)"));
+        .text("↑ Nombre d'apparition"));
 
 });
