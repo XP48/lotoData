@@ -5,11 +5,11 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     console.log(numeros_chance)
 
     marginLeft=50;
-    width=1000;
+    width=700;
     marginRight=60;
     marginBottom=20;
     marginTop=45
-    height=1000;
+    height=700;
     const scaleX = d3.scaleBand()
         .domain(["1","2","3","4","5","6","7","8","9", "10"])
         .range([marginLeft, width - marginRight])
