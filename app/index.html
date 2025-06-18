@@ -3,6 +3,8 @@
   <head>
     <title>🍀Loto Data</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <script src="../librairie/d3.v7.js"></script>
+    <script src="../app/js/visualisation.js"></script>
   </head>
   <body>
     <header>
@@ -114,7 +116,24 @@
         </div>
       </div>
     </section>
+    <section id="section-graph1">
+      <div class="back"></div>
+      <div id="barNbWinDay"></div>
+      <div class="texte">
+        <h1>Durant quel jour de la semaine faut-il jouer ?</h1>
+        <p>
+          nb gagnant par jours, plus le samedi mais sans doute plus de jouerus
+        </p>
+      </div>
+    </section>
+
+    <section id="section-graph2">
+      <div class="texte">
+        <h1>Quel numéro chance choisir ?</h1>
+        <p>nb apparition de nb chance</p>
+      </div>
+      <div id="barNumChance"></div>
+    </section>
   </body>
-  <script src="../app/js/visualisation.js"></script>
   <script src="../app/js/grille.js"></script>
 </html>
