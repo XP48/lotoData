@@ -268,3 +268,18 @@ header a {
 .chance{
   border-radius: 100%;
 }
+
+#section-graph1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#barNbWinDay{
+  color: #000;
+  font-size: 64px;
+  background-color: #fff;
+  
+}

@@ -26,7 +26,7 @@ for (let index = 1; index <= 50; index++) {
     numero.appendChild(num)
 }
 
-for (let index = 1; index <= 12; index++) {
+for (let index = 1; index <= 10; index++) {
     let num = document.createElement("div")
     num.classList.add("case")
     num.classList.add("chance")
