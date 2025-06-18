@@ -19,14 +19,14 @@ numero.addEventListener("click", selected)
 numero_chance.addEventListener("click", selected)
 
 
-for (let index = 1; index < 50; index++) {
+for (let index = 1; index <= 50; index++) {
     let num = document.createElement("div")
     num.classList.add("case")
     num.innerText = index
     numero.appendChild(num)
 }
 
-for (let index = 1; index < 10; index++) {
+for (let index = 1; index <= 12; index++) {
     let num = document.createElement("div")
     num.classList.add("case")
     num.classList.add("chance")
