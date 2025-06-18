@@ -1,67 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <title>🍀Loto Data</title>
-    <link rel="stylesheet" href="./css/styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>LOTO</h1>
-
-      
-      <button id="back-to-top" aria-label="Retour en haut"></button>
-
-
-      <p>Analyse du jeux de loto de la Française des Jeux</p>
-    <div class="element">
-      <div class="ball reverse delay-1 " id="a31">
-        <img src="./src/img/lotto-ball-31.webp" alt="" />
-      </div>
-      <div class="ball delay-2 " id="a33">
-        <img src="./src/img/lotto-ball-33.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-0 " id="a25">
-        <img src="./src/img/lotto-ball-25.webp" alt="" />
-      </div>
-      <div class="ball delay-1 " id="a22">
-        <img src="./src/img/lotto-ball-22.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-2 " id="a17">
-        <img src="./src/img/lotto-ball-17.webp" alt="" />
-      </div>
-      <div class="ball delay-0 " id="a15">
-        <img src="./src/img/lotto-ball-15.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-1 " id="b31">
-        <img src="./src/img/lotto-ball-31.webp" alt="" />
-      </div>
-      <div class="ball delay-2 " id="b33">
-        <img src="./src/img/lotto-ball-33.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-0 " id="b25">
-        <img src="./src/img/lotto-ball-25.webp" alt="" />
-      </div>
-      <div class="ball delay-1 " id="b22">
-        <img src="./src/img/lotto-ball-22.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-3 " id="b17">
-        <img src="./src/img/lotto-ball-17.webp" alt="" />
-      </div>
-    </div>
-      <a href="#section-grille">entrer</a>
-    </header>
-    <section id="section-grille">
-      <div class="grille element"  >
-        <div class="grille1">
-          <div class="numero">
-
-          </div>
-          <div class="numero-chance">
-
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍀 Loto Data - Analyse FDJ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&family=League+Spartan:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">LOTO</h1>
+            <p class="hero__subtitle">Analyse des tirages FDJ</p>
+            <a href="#data-section" class="hero__cta">
+                <span>Explorer les données</span>
+                <i class="fas fa-arrow-down"></i>
+            </a>
         </div>
-      </div>
-    </section>
-  </body>
-  <script src="../app/js/visualisation.js"></script>
+        <div class="balls-container"></div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+   
+    </main>
+
+    <button id="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="../librairie/d3.v7.js"></script>
+    <script src="../app/js/visualisation.js"></script>
+    <script src="../app/js/animations.js"></script>
+    <script src="../app/js/main.js"></script>
+</body>
 </html>
