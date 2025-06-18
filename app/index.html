@@ -8,91 +8,113 @@
     <header>
       <h1>LOTO</h1>
       <p>Analyse du jeux de loto de la Française des Jeux</p>
-      <div class="ball reverse delay-1" id="a31">
-        <img src="./src/img/lotto-ball-31.webp" alt="" />
-      </div>
-      <div class="ball delay-2" id="a33">
-        <img src="./src/img/lotto-ball-33.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-0" id="a25">
-        <img src="./src/img/lotto-ball-25.webp" alt="" />
-      </div>
-      <div class="ball delay-1" id="a22">
-        <img src="./src/img/lotto-ball-22.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-2" id="a17">
-        <img src="./src/img/lotto-ball-17.webp" alt="" />
-      </div>
-      <div class="ball delay-0" id="a15">
-        <img src="./src/img/lotto-ball-15.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-1" id="b31">
-        <img src="./src/img/lotto-ball-31.webp" alt="" />
-      </div>
-      <div class="ball delay-2" id="b33">
-        <img src="./src/img/lotto-ball-33.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-0" id="b25">
-        <img src="./src/img/lotto-ball-25.webp" alt="" />
-      </div>
-      <div class="ball delay-1" id="b22">
-        <img src="./src/img/lotto-ball-22.webp" alt="" />
-      </div>
-      <div class="ball reverse delay-3" id="b17">
-        <img src="./src/img/lotto-ball-17.webp" alt="" />
-      </div>
+
+      <img
+        class="ball reverse delay-1"
+        id="a31"
+        src="./src/img/lotto-ball-31.webp"
+        alt=""
+      />
+      <img
+        class="ball delay-2"
+        id="a33"
+        src="./src/img/lotto-ball-33.webp"
+        alt=""
+      />
+      <img
+        class="ball reverse delay-0"
+        id="a25"
+        src="./src/img/lotto-ball-25.webp"
+        alt=""
+      />
+      <img
+        class="ball delay-1"
+        id="a22"
+        src="./src/img/lotto-ball-22.webp"
+        alt=""
+      />
+      <img
+        class="ball reverse delay-2"
+        id="a17"
+        src="./src/img/lotto-ball-17.webp"
+        alt=""
+      />
+      <img
+        class="ball delay-0"
+        id="a15"
+        src="./src/img/lotto-ball-15.webp"
+        alt=""
+      />
+      <img
+        class="ball reverse delay-1"
+        id="b31"
+        src="./src/img/lotto-ball-31.webp"
+        alt=""
+      />
+      <img
+        class="ball delay-2"
+        id="b33"
+        src="./src/img/lotto-ball-33.webp"
+        alt=""
+      />
+      <img
+        class="ball reverse delay-0"
+        id="b25"
+        src="./src/img/lotto-ball-25.webp"
+        alt=""
+      />
+      <img
+        class="ball delay-1"
+        id="b22"
+        src="./src/img/lotto-ball-22.webp"
+        alt=""
+      />
+      <img
+        class="ball reverse delay-3"
+        id="b17"
+        src="./src/img/lotto-ball-17.webp"
+        alt=""
+      />
       <a href="#section-grille">entrer</a>
     </header>
     <section id="section-grille">
-        <div class="grille">
-          <p>Pour jouer une grille, cochez 5 numéros et 1 numéro chance</p>
-          <div class="grille-ligne">
-            <div class="grille1">
-              <p>vos 5 n°</p>
-              <div class="numero" id="numero">
-              </div>
-              <p>votre n° chance</p>
-              <div class="numero-chance" id="numero-chance">
-              </div>
-            </div>
-            <div class="grille1">
-              <p id="disabled-back">vos 5 n°</p>
-              <div class="numero disabled" id="numero2">
-              </div>
-              <p id="disabled-back">votre n° chance</p>
-              <div class="numero-chance disabled" id="numero-chance2">
-              </div>
-            </div>
-            <div class="grille1">
-              <p id="disabled-back">vos 5 n°</p>
-              <div class="numero disabled" id="numero3">
-              </div>
-              <p id="disabled-back">votre n° chance</p>
-              <div class="numero-chance disabled" id="numero-chance3">
-              </div>
-            </div>
-            <div class="grille1">
-              <p id="disabled-back">vos 5 n°</p>
-              <div class="numero disabled" id="numero4">
-              </div>
-              <p id="disabled-back">votre n° chance</p>
-              <div class="numero-chance disabled" id="numero-chance4">
-              </div>
-            </div>
-            <div class="grille1">
-              <p id="disabled-back">vos 5 n°</p>
-              <div class="numero disabled" id="numero5">
-              </div>
-              <p id="disabled-back">votre n° chance</p>
-              <div class="numero-chance disabled" id="numero-chance5">
-              </div>
-            </div>
+      <div class="grille">
+        <p>Pour jouer une grille, cochez 5 numéros et 1 numéro chance</p>
+        <div class="grille-ligne">
+          <div class="grille1">
+            <p>vos 5 n°</p>
+            <div class="numero" id="numero"></div>
+            <p>votre n° chance</p>
+            <div class="numero-chance" id="numero-chance"></div>
+          </div>
+          <div class="grille1">
+            <p id="disabled-back">vos 5 n°</p>
+            <div class="numero disabled" id="numero2"></div>
+            <p id="disabled-back">votre n° chance</p>
+            <div class="numero-chance disabled" id="numero-chance2"></div>
+          </div>
+          <div class="grille1">
+            <p id="disabled-back">vos 5 n°</p>
+            <div class="numero disabled" id="numero3"></div>
+            <p id="disabled-back">votre n° chance</p>
+            <div class="numero-chance disabled" id="numero-chance3"></div>
+          </div>
+          <div class="grille1">
+            <p id="disabled-back">vos 5 n°</p>
+            <div class="numero disabled" id="numero4"></div>
+            <p id="disabled-back">votre n° chance</p>
+            <div class="numero-chance disabled" id="numero-chance4"></div>
+          </div>
+          <div class="grille1">
+            <p id="disabled-back">vos 5 n°</p>
+            <div class="numero disabled" id="numero5"></div>
+            <p id="disabled-back">votre n° chance</p>
+            <div class="numero-chance disabled" id="numero-chance5"></div>
+          </div>
         </div>
       </div>
     </section>
-    
   </body>
   <script src="../app/js/visualisation.js"></script>
   <script src="../app/js/grille.js"></script>
-
 </html>

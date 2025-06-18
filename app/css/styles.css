@@ -6,8 +6,8 @@
 }
 
 html {
-	scroll-behavior: smooth;
-  scrollbar-width: none
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 body {
@@ -40,10 +40,12 @@ p {
 #a31 {
   top: 10vh;
   left: 85vw;
+  width: 60px;
 }
 #a33 {
   top: 75vh;
   left: 70vw;
+  width: 225px;
 }
 #a25 {
   top: 60vh;
@@ -63,6 +65,7 @@ p {
 #a15 {
   top: 30vh;
   left: 64vw;
+  width: 75px;
 }
 
 #b31 {
@@ -109,7 +112,6 @@ p {
 
 .ball img,
 .reverse img {
-  width: 100px;
   animation: float 5s ease-in-out infinite;
 }
 
@@ -186,7 +188,7 @@ header a {
   gap: 25px;
 }
 
-.grille1{
+.grille1 {
   width: 18%;
   height: 60vh;
   display: flex;
@@ -253,7 +255,7 @@ header a {
   color: #fff;
 }
 
-.grille-ligne{
+.grille-ligne {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -265,6 +267,6 @@ header a {
   border: solid 2px grey;
 }
 
-.chance{
+.chance {
   border-radius: 100%;
 }
