@@ -45,7 +45,7 @@ p {
 #a33 {
   top: 75vh;
   left: 70vw;
-  width: 225px;
+  width: 150px;
 }
 #a25 {
   top: 60vh;
@@ -55,7 +55,7 @@ p {
 #a22 {
   top: 85vh;
   left: 90vw;
-  width: 150px;
+  width: 100px;
 }
 #a17 {
   top: 50vh;
@@ -101,20 +101,17 @@ p {
 
 /* Animation des boulles sur page d'accueil */
 
+/* Supprimez la classe .anim - elle n'est pas nécessaire */
 .ball {
   position: absolute;
-  animation: rotate 45s linear infinite;
+  animation: rotate 45s linear infinite, float 5s ease-in-out infinite;
 }
 
 .ball.reverse {
-  animation: rotate-inverse 50s linear infinite;
+  animation: rotate-inverse 50s linear infinite, float 5s ease-in-out infinite;
 }
 
-.ball img,
-.reverse img {
-  animation: float 5s ease-in-out infinite;
-}
-
+/* Conservez les délais */
 .delay-0 {
   animation-delay: 0s;
 }
@@ -179,7 +176,7 @@ header a {
 
 .grille {
   width: 75vw;
-  height: 66vh;
+  height: 68vh;
   background-color: rgb(106, 194, 235);
   border-radius: 25px;
   display: flex;
@@ -238,9 +235,10 @@ header a {
 }
 
 .case {
-  width: 25px;
-  height: 25px;
-  margin: 8px;
+  width: 15px;
+  height: 15px;
+  padding: 4px;
+  margin: 3px;
   background-color: #fff;
   border: solid 2px red;
   display: flex;
@@ -265,13 +263,15 @@ header a {
 
 .disabled {
   border: solid 2px grey;
+  cursor: default;
 }
 
 .chance {
   border-radius: 100%;
 }
 
-#section-graph1, #section-graph2{
+#section-graph1,
+#section-graph2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -281,17 +281,19 @@ header a {
   overflow: hidden;
 }
 
-#barNbWinDay svg, #barNumChance svg{
+#barNbWinDay svg,
+#barNumChance svg {
   background-color: #fff;
   border-radius: 12px;
   padding-bottom: 12px;
 }
 
-#barNbWinDay svg:hover, #barNumChance svg:hover{
+#barNbWinDay svg:hover,
+#barNumChance svg:hover {
   cursor: pointer;
 }
 
-.back{
+.back {
   position: absolute;
   background-color: #423f63;
   transform: rotate(1.2deg);
@@ -311,4 +313,52 @@ header a {
   color: #423f63;
 }
 
-/* ajouter caroussel pour modifier le graphe au scroll */
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.grille-texte {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+#section-statsNum {
+  height: 100vh;
+  width: 100vw;
+}
+
+#boule1,
+#boule2,
+#boule3,
+#boule4,
+#boule5,
+#boule6 {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: "League Spartan", sans-serif;
+}
+
+#boule6 {
+  border: 5px solid red;
+}
+
+.boules {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 35vh;
+  gap: 50px;
+}

@@ -10,13 +10,15 @@
     <header>
       <h1>LOTO</h1>
       <p>Analyse du jeux de loto de la Française des Jeux</p>
+      <div class="anim delay-1">
+        <img
+          class="ball reverse"
+          id="a31"
+          src="./src/img/lotto-ball-31.webp"
+          alt=""
+        />
+      </div>
 
-      <img
-        class="ball reverse delay-1"
-        id="a31"
-        src="./src/img/lotto-ball-31.webp"
-        alt=""
-      />
       <img
         class="ball delay-2"
         id="a33"
@@ -81,7 +83,10 @@
     </header>
     <section id="section-grille">
       <div class="grille">
-        <p>Pour jouer une grille, cochez 5 numéros et 1 numéro chance</p>
+        <p class="grille-texte">
+          Pour jouer une grille, <span class="red">cochez 5 numéros</span> et
+          <span class="blue">1 numéro chance</span>
+        </p>
         <div class="grille-ligne">
           <div class="grille1">
             <p>vos 5 n°</p>
@@ -115,6 +120,30 @@
           </div>
         </div>
       </div>
+      <a href="#section-statsNum">Jouer</a>
+    </section>
+    <section id="section-statsNum">
+      <div class="back"></div>
+      <h1>
+        Avec ces numéros, vous auriez pu gagner <span id="somme"></span> le
+        <span id="date"></span>
+      </h1>
+      <div class="boules">
+        <div id="boule1"></div>
+        <div id="boule2"></div>
+        <div id="boule3"></div>
+        <div id="boule4"></div>
+        <div id="boule5"></div>
+        <div id="boule6"></div>
+      </div>
+    </section>
+    <section id="section-graph2">
+      <div class="texte">
+        <h1>Quel numéro chance choisir ?</h1>
+        <p>nb apparition de nb chance</p>
+      </div>
+      <div id="barNum"></div>
+      <div id="barNumChance"></div>
     </section>
     <section id="section-graph1">
       <div class="back"></div>
@@ -125,15 +154,6 @@
           nb gagnant par jours, plus le samedi mais sans doute plus de jouerus
         </p>
       </div>
-    </section>
-
-    <section id="section-graph2">
-      <div class="texte">
-        <h1>Quel numéro chance choisir ?</h1>
-        <p>nb apparition de nb chance</p>
-      </div>
-      <div id="barNum"></div>
-      <div id="barNumChance"></div>
     </section>
     <div id="percentageNumber_boule1"></div>
     <div id="percentageNumber_boule2"></div>
