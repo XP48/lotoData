@@ -53,7 +53,12 @@ async function checkCombinaison() {
   let meilleureCombinaison = null;
 
   for (const combinaison of combinaisons) {
-    const [boules, numChance] = combinaison.split("+");
+    const columns = combinaison.split(";");
+    const combiGagnante = columns[10];
+
+    if (!combiGagnante || combiGagnante === "-") continue;
+
+    const [boules, numChance] = combiGagnante.split("+");
     const combiBoules = boules.split("-").map((n) => parseInt(n));
     const combiChance = parseInt(numChance);
 
@@ -64,12 +69,7 @@ async function checkCombinaison() {
       }
     }
 
-    let nbChance;
-    if (chance === combiChance) {
-      nbChance = 1;
-    } else {
-      nbChance = 0;
-    }
+    let nbChance = chance === combiChance ? 1 : 0;
     const key = `${nbCorrects}n${nbChance}c`;
 
     if (gains.has(key)) {
@@ -81,29 +81,40 @@ async function checkCombinaison() {
           gain,
           nums: combiBoules,
           chance: combiChance,
+          date: columns[2],
         };
       }
     }
   }
 
   if (meilleurGain > 0) {
-    somme.innerText = meilleurGain + "€";
-    date.innerText = ``;
-    console.log(
-      `Tu aurais gagner ${meilleurGain}€ avec ${
-        meilleureCombinaison.key
-      } (${nums.join(",")} + ${chance})`
-    );
-    console.log(
-      `Combinaison : ${meilleureCombinaison.nums.join(",")} + ${
-        meilleureCombinaison.chance
-      }`
-    );
+    somme.innerText = meilleurGain;
+    date.innerText = meilleureCombinaison.date;
     return meilleurGain;
   } else {
-    console.log("0€");
+    somme.innerText = "0€";
+    date.innerText = "";
     return 0;
   }
+}
+
+async function loadCSV() {
+  const response = await fetch("./src/data/loto_201911.csv");
+  const csvData = await response.text();
+  const results = parseCSV(csvData);
+  return results;
+}
+
+function parseCSV(csvText) {
+  const lines = csvText.split("\n");
+  const results = [];
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line) {
+      results.push(line);
+    }
+  }
+  return results;
 }
 
 for (let index = 1; index <= 50; index++) {
@@ -152,15 +163,11 @@ function selected(event) {
     if (event.target.classList.contains("selected")) {
       if (!event.target.classList.contains("chance")) {
         const index = numListe.indexOf(event.target.innerText);
-        if (index > -1) {
-          numListe.splice(index, 1);
-        }
+        numListe.splice(index, 1);
         event.target.classList.toggle("selected");
       } else {
         const index = numChanceListe.indexOf(event.target.innerText);
-        if (index > -1) {
-          numChanceListe.splice(index, 1);
-        }
+        numChanceListe.splice(index, 1);
         event.target.classList.toggle("selected");
       }
     } else {
@@ -188,27 +195,4 @@ function selected(event) {
     loadCSV();
     checkCombinaison();
   }
-}
-
-async function loadCSV() {
-  const response = await fetch("./src/data/loto_201911.csv");
-  const csvData = await response.text();
-  const results = parseCSV(csvData);
-  return results;
-}
-
-function parseCSV(csvText) {
-  const lines = csvText.split("\n");
-  const results = [];
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (line) {
-      const columns = line.split(";");
-      if (columns.length > 10) {
-        results.push(columns[10]);
-      }
-    }
-  }
-
-  return results;
 }

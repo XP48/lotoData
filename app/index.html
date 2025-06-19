@@ -5,12 +5,17 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="../librairie/d3.v7.js"></script>
     <script src="../app/js/visualisation.js"></script>
+    <script>
+      getGraphNumber(27, "percentageNumber_boule1");
+      getGraphNumber(15, "percentageNumber_boule2");
+    </script>
   </head>
   <body>
     <header>
       <h1>LOTO</h1>
       <p>Analyse du jeux de loto de la Française des Jeux</p>
       <div class="anim delay-1">
+        <a href="#section-grille">🚪explorer les données</a>
         <img
           class="ball reverse"
           id="a31"
@@ -18,7 +23,6 @@
           alt=""
         />
       </div>
-
       <img
         class="ball delay-2"
         id="a33"
@@ -79,7 +83,6 @@
         src="./src/img/lotto-ball-17.webp"
         alt=""
       />
-      <a href="#section-grille">entrer</a>
     </header>
     <section id="section-grille">
       <div class="grille">
@@ -120,14 +123,17 @@
           </div>
         </div>
       </div>
-      <a href="#section-statsNum">Jouer</a>
+      <a href="#section-statsNum1">Jouer !</a>
     </section>
-    <section id="section-statsNum">
-      <div class="back"></div>
-      <h1>
-        Avec ces numéros, vous auriez pu gagner <span id="somme"></span> le
-        <span id="date"></span>
-      </h1>
+    <section id="section-statsNum1">
+      <div class="back gain"></div>
+      <h1>Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€</h1>
+      <video loop autoplay><source src="./src/1pMt.mp4" /></video>
+      <h1>le <span id="date"></span></h1>
+      <a href="#section-statsNum2">👇</a>
+    </section>
+    <section id="section-statsNum2">
+      <h1>Analysons maintenant vos numéros</h1>
       <div class="boules">
         <div id="boule1"></div>
         <div id="boule2"></div>
@@ -136,14 +142,9 @@
         <div id="boule5"></div>
         <div id="boule6"></div>
       </div>
-    </section>
-    <section id="section-graph2">
-      <div class="texte">
-        <h1>Quel numéro chance choisir ?</h1>
-        <p>nb apparition de nb chance</p>
-      </div>
-      <div id="barNum"></div>
-      <div id="barNumChance"></div>
+      <div id="percentageNumber_boule1"></div>
+      <div id="percentageNumber_boule2"></div>
+      <a href="#section-graph1">👇</a>
     </section>
     <section id="section-graph1">
       <div class="back"></div>
@@ -154,13 +155,26 @@
           nb gagnant par jours, plus le samedi mais sans doute plus de jouerus
         </p>
       </div>
+      <a href="#section-graph2">👇</a>
     </section>
-    <div id="percentageNumber_boule1"></div>
-    <div id="percentageNumber_boule2"></div>
+    <section id="section-graph2">
+      <div class="texte">
+        <h1>Quel numéro chance choisir ?</h1>
+        <p>nb apparition de nb chance</p>
+      </div>
+      <div id="barNumChance"></div>
+      <a href="#section-graph3">👇</a>
+    </section>
+    <section id="section-graph3">
+      <div class="texte">
+        <h1>Quel numéro choisir ?</h1>
+      </div>
+      <div id="barNum"></div>
+      <p>après analyse approfondie, li faut choisir numero</p>
+    </section>
+    <section id="section-graph1">
+      <div class="back"></div>
+    </section>
   </body>
   <script src="../app/js/grille.js"></script>
-  <script>
-    getGraphNumber(27, "percentageNumber_boule1");
-    getGraphNumber(15, "percentageNumber_boule2");
-  </script>
 </html>
