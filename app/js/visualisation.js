@@ -271,12 +271,14 @@ function getGraphNumber(number, divId) {
 
 
 
-    const height = Math.min(500, width / 2);
+    const height = Math.min(1000, width / 2);
 
     const outerRadius = height / 2 - 10;
     const innerRadius = outerRadius * 0.75;
 
     const svg4 = graph.append("svg")
+        .attr("width", width)
+        .attr("height", height)
         .attr("viewBox", [0, 0, width, height]);
 
     const g = svg4.append("g")
