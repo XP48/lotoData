@@ -271,7 +271,7 @@ function getGraphNumber(number, divId) {
 
 
 
-    const height = Math.min(200, width / 2);
+    const height = Math.min(500, width / 2);
 
     const outerRadius = height / 2 - 10;
     const innerRadius = outerRadius * 0.75;
