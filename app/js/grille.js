@@ -38,7 +38,7 @@ btnJouer.addEventListener("click", async () => {
   sectionstatsNum2.classList.remove("hidden");
 });
 
-for (let i = 0; i < boules.length; i++) {
+for (let i = 0; i < boules.length - 1; i++) {
   boules[i].addEventListener("click", () => {
     for (let j = 0; j < boules.length - 1; j++) {
       boules[j].style.border = "none";
