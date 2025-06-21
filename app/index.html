@@ -8,14 +8,14 @@
   </head>
   <body>
     <div class="carousel">
-      <div class="carousel-nav"id="carousel">
+      <!-- <div class="carousel-nav"id="carousel">
         <button data-target="section-grille" class="active"></button>
         <button data-target="section-statsNum1"></button>
         <button data-target="section-statsNum2"></button>
         <button data-target="section-graph1"></button>
         <button data-target="section-graph2"></button>
         <button data-target="section-graph3"></button>
-      </div>
+      </div> -->
       <div class="carousel-container">
         <!-- Section 1 - Header -->
         <section class="carousel" id="section-header">
@@ -138,7 +138,7 @@
             <a href="#section-statsNum1" id="btnJouer">Jouer !</a>
         </section>
         <!-- Section 3 - Stats -->
-        <section class="carousel" id="section-statsNum1">
+        <section class="hidden carousel" id="section-statsNum1">
             <div class="back gain"></div>
             <h1>Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€</h1>
             <video loop autoplay><source src="./src/1pMt.mp4" /></video>
@@ -213,10 +213,8 @@
           </script>
         </section>
       </div>
-      <a href="#main">entrer</a>
     </header>
     <main id="main"></main>
   </body>
   <script src="../app/js/grille.js"></script>
-  <script src="../test/js/main.js"></script>
 </html>
