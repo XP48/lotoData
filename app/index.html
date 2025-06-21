@@ -9,13 +9,13 @@
   <body>
     <div class="carousel">
       <!-- <div class="carousel-nav"id="carousel">
-        <button data-target="section-grille" class="active"></button>
-        <button data-target="section-statsNum1"></button>
-        <button data-target="section-statsNum2"></button>
-        <button data-target="section-graph1"></button>
-        <button data-target="section-graph2"></button>
-        <button data-target="section-graph3"></button>
-      </div> -->
+            <button data-target="section-grille" class="active"></button>
+            <button data-target="section-statsNum1"></button>
+            <button data-target="section-statsNum2"></button>
+            <button data-target="section-graph1"></button>
+            <button data-target="section-graph2"></button>
+            <button data-target="section-graph3"></button>
+            </div> -->
       <div class="carousel-container">
         <!-- Section 1 - Header -->
         <section class="carousel" id="section-header">
@@ -98,136 +98,160 @@
         <section class="carousel" id="section-info">
           <div class="projet">
             <h1>Projet Loto Data</h1>
-            <p>"Le projet Loto Data, réalisé au cours du quatrième semestre du BUT Informatique et encadré par Monsieur Cabric, vise à explorer, analyser et visualiser un ensemble de données autour d'un thème choisi. Nous avons décider d'explorer les mystères d'un célèbre jeux de hasard, le Loto de la FDJ."</p>
+            <p>
+              "Le projet Loto Data, réalisé au cours du quatrième semestre du
+              BUT Informatique et encadré par Monsieur Cabric, vise à explorer,
+              analyser et visualiser un ensemble de données autour d'un thème
+              choisi. Nous avons décider d'explorer les mystères d'un célèbre
+              jeux de hasard, le Loto de la FDJ."
+            </p>
             <h3>Nicolas VOUILLOUX - Antonin LANCESSEUR - Matthieu GAYMAY</h3>
           </div>
-          <div class="bandeau">      
-            <p>⚠️ Les jeux d'argent et de hasard peuvent être dangereux : pertes d'argent, conflits familiaux, addiction... Appelez le 09 74 75 13 13 (Appel non surtaxé)</p>
+          <div class="bandeau">
+            <p>
+              ⚠️ Les jeux d'argent et de hasard peuvent être dangereux : pertes
+              d'argent, conflits familiaux, addiction... Appelez le 09 74 75 13
+              13 (Appel non surtaxé)
+            </p>
           </div>
         </section>
         <!-- Section 2 grille avec les choix-->
         <section class="carousel" id="section-grille">
-            <div class="grille">
-              <p class="grille-texte">
-                Jouez une grille en <span class="red">cochant 5 numéros</span> et
-                <span class="blue">1 numéro chance</span>
-              </p>
-              <div class="grille-ligne">
-                <div class="grille1">
-                  <p>vos 5 n°</p>
-                  <div class="numero" id="numero"></div>
-                  <p>votre n° chance</p>
-                  <div class="numero-chance" id="numero-chance"></div>
-                </div>
-                <div class="grille1">
-                  <p id="disabled-back">vos 5 n°</p>
-                  <div class="numero disabled" id="numero2"></div>
-                  <p id="disabled-back">votre n° chance</p>
-                  <div class="numero-chance disabled" id="numero-chance2"></div>
-                </div>
-                <div class="grille1">
-                  <p id="disabled-back">vos 5 n°</p>
-                  <div class="numero disabled" id="numero3"></div>
-                  <p id="disabled-back">votre n° chance</p>
-                  <div class="numero-chance disabled" id="numero-chance3"></div>
-                </div>
-                <div class="grille1">
-                  <p id="disabled-back">vos 5 n°</p>
-                  <div class="numero disabled" id="numero4"></div>
-                  <p id="disabled-back">votre n° chance</p>
-                  <div class="numero-chance disabled" id="numero-chance4"></div>
-                </div>
-                <div class="grille1">
-                  <p id="disabled-back">vos 5 n°</p>
-                  <div class="numero disabled" id="numero5"></div>
-                  <p id="disabled-back">votre n° chance</p>
-                  <div class="numero-chance disabled" id="numero-chance5"></div>
-                </div>
+          <div class="grille">
+            <p class="grille-texte">
+              Jouez une grille en <span class="red">cochant 5 numéros</span> et
+              <span class="blue">1 numéro chance</span>
+            </p>
+            <div class="grille-ligne">
+              <div class="grille1">
+                <p>vos 5 n°</p>
+                <div class="numero" id="numero"></div>
+                <p>votre n° chance</p>
+                <div class="numero-chance" id="numero-chance"></div>
+              </div>
+              <div class="grille1">
+                <p id="disabled-back">vos 5 n°</p>
+                <div class="numero disabled" id="numero2"></div>
+                <p id="disabled-back">votre n° chance</p>
+                <div class="numero-chance disabled" id="numero-chance2"></div>
+              </div>
+              <div class="grille1">
+                <p id="disabled-back">vos 5 n°</p>
+                <div class="numero disabled" id="numero3"></div>
+                <p id="disabled-back">votre n° chance</p>
+                <div class="numero-chance disabled" id="numero-chance3"></div>
+              </div>
+              <div class="grille1">
+                <p id="disabled-back">vos 5 n°</p>
+                <div class="numero disabled" id="numero4"></div>
+                <p id="disabled-back">votre n° chance</p>
+                <div class="numero-chance disabled" id="numero-chance4"></div>
+              </div>
+              <div class="grille1">
+                <p id="disabled-back">vos 5 n°</p>
+                <div class="numero disabled" id="numero5"></div>
+                <p id="disabled-back">votre n° chance</p>
+                <div class="numero-chance disabled" id="numero-chance5"></div>
               </div>
             </div>
-            <a href="#section-statsNum1" id="btnJouer">Jouer !</a>
+          </div>
+          <a href="#section-statsNum1" id="btnJouer">Jouer !</a>
         </section>
         <!-- Section 3 - Stats -->
         <section class="hidden carousel" id="section-statsNum1">
-            <div class="back gain"></div>
-            <h1>Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€</h1>
-            <video autoplay loop><source src="./src/1pMt.mp4" /></video>
-            <h1>le <span id="date"></span></h1>
-            <a href="#section-statsNum2">👇</a>
-          </section>
+          <div class="back gain"></div>
+          <h1>
+            Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€
+          </h1>
+          <video autoplay loop>
+            <source src="./src/1pMt.mp4" />
+          </video>
+          <h1>le <span id="date"></span></h1>
+          <a href="#section-statsNum2">👇</a>
         </section>
         <!-- Section 4 - Stats 2 améliorée -->
         <section class="carousel hidden" id="section-statsNum2">
-            <h1>Analysons maintenant vos numéros</h1>
-            <div class="boules">
-              <div id="boule1"></div>
-              <div id="boule2"></div>
-              <div id="boule3"></div>
-              <div id="boule4"></div>
-              <div id="boule5"></div>
-              <div id="boule6"></div>
+          <h1>Analysons maintenant vos numéros</h1>
+          <div class="boules">
+            <div id="boule1"></div>
+            <div id="boule2"></div>
+            <div id="boule3"></div>
+            <div id="boule4"></div>
+            <div id="boule5"></div>
+            <div id="boule6"></div>
+          </div>
+          <h1 id="textAnalyse">
+            Selectionnez un numéro pour obtenir son analyse
+          </h1>
+          <div id="analyseNum" class="analyseNum hidden">
+            <div id="percentageNumber_boule2"></div>
+            <div>
+              <p>
+                Le numéro est apparu
+                <span id="nbApparition" class="red"></span> fois depuis novembre
+                2019,
+              </p>
+              <p>
+                Il a permis a <span id="nbJoueurs" class="red"></span> joueur(s)
+                de gagner plus d'un milion d'euro,
+              </p>
+              <p>
+                Ce numéro est apparu pour la dernière fois le<span
+                  id="dateDer"
+                  class="red"
+                ></span>
+              </p>
             </div>
-            <h1 id="textAnalyse">Selectionnez un numéro pour obtenir son analyse</h1>
-            <div id="analyseNum" class="analyseNum hidden">
-              <p>
-                Le numéro est apparu <span id="nbApparition" class="red"></span> fois depuis
-                novembre 2019,
-              </p>
-              <p>
-                Il a permis a <span id="nbJoueurs" class="red"></span> joueur(s) de gagner plus
-                d'un milion d'euro,
-              </p>
-              <p>
-                Ce numéro est apparu pour la dernière fois le<span id="dateDer" class="red"></span>
-              </p>
-            </div>
-            <!-- <div id="percentageNumber_boule1"></div>
-            <div id="percentageNumber_boule2"></div> -->
-            <a href="#section-graph1">👇</a>
+          </div>
+          <a href="#section-graph1">👇</a>
         </section>
         <!-- Section 5 - Graph 1 -->
         <section class="carousel" id="section-graph1">
-            <div class="back"></div>
-            <div id="barNbWinDay"></div>
-            <div class="texte">
-              <h1>Durant quel jour de la semaine faut-il jouer ?</h1>
-              <p>
-                Ce graphique présente le nombre de gagnants par jour de tirage. 
-                On observe un nombre de gagnant plus élevé le samedi.
-                Cette augmentation pourrait se justifier par le fait qu'il y est plus de joueurs ce jour.
-              </p>
-            </div>
-            <a href="#section-graph2">👇</a>
+          <div class="back"></div>
+          <div id="barNbWinDay"></div>
+          <div class="texte">
+            <h1>Durant quel jour de la semaine faut-il jouer ?</h1>
+            <p>
+              Ce graphique présente le nombre de gagnants par jour de tirage. On
+              observe un nombre de gagnant plus élevé le samedi. Cette
+              augmentation pourrait se justifier par le fait qu'il y est plus de
+              joueurs ce jour.
+            </p>
+          </div>
+          <a href="#section-graph2">👇</a>
         </section>
         <!-- Section 6 - Graph 2 -->
         <section class="carousel" id="section-graph2">
-            <div class="texte">
-              <h1>Quel numéro chance choisir ?</h1>
-              <p>En visualisant le nombre d'apparition pour chaque numéro chance, et, malgré un aléatoire certain, certains chiffres semblent apparaitre plus que d'autre. C'est le cas du numéro 9 avec près de 105 apparitions contre seulement 74 pour le numéro 4.</p>
-            </div>
-            <div id="barNumChance"></div>
-            <a href="#section-graph3">👇</a>
+          <div class="texte">
+            <h1>Quel numéro chance choisir ?</h1>
+            <p>
+              En visualisant le nombre d'apparition pour chaque numéro chance,
+              et, malgré un aléatoire certain, certains chiffres semblent
+              apparaitre plus que d'autre. C'est le cas du numéro 9 avec près de
+              105 apparitions contre seulement 74 pour le numéro 4.
+            </p>
+          </div>
+          <div id="barNumChance"></div>
+          <a href="#section-graph3">👇</a>
         </section>
         <!-- Section 7 - Graph 3 -->
         <section class="carousel" id="section-graph3">
-            <div class="back"></div>
-            <div class="texte">
-              <h1>Quel numéro choisir ?</h1>
-            </div>
-            <div id="barNum"></div>
+          <div class="back"></div>
+          <div class="texte">
+            <h1>Quel numéro choisir ?</h1>
+          </div>
+          <div id="barNum"></div>
           <p class="texteP">
-            Pour les numéros simples, le constat est similaire : certaines valeurs, comme le 15 ou le 5, semblent apparaître plus fréquemment que d'autres. À l'inverse, le numéro 27 apparaît rarement. Partant de ce constat, quelle stratégie adopter ? Faut-il choisir les numéros les plus fréquents ou ceux qui sont moins souvent tirés ? <br>La réponse est .
+            Pour les numéros simples, le constat est similaire : certaines
+            valeurs, comme le 15 ou le 5, semblent apparaître plus fréquemment
+            que d'autres. À l'inverse, le numéro 27 apparaît rarement. Partant
+            de ce constat, quelle stratégie adopter ? Faut-il choisir les
+            numéros les plus fréquents ou ceux qui sont moins souvent tirés ?
+            <br />La réponse est .
           </p>
         </section>
-          <section id="section-graph"></section>
-          <script>
-            getGraphNumber(27, "percentageNumber_boule1");
-            getGraphNumber(15, "percentageNumber_boule2");
-          </script>
-        </section>
       </div>
-    </header>
-    <main id="main"></main>
+      <script src="../app/js/grille.js"></script>
+    </div>
   </body>
-  <script src="../app/js/grille.js"></script>
 </html>

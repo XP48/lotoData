@@ -495,7 +495,7 @@ p {
 #section-statsNum2 a {
   position: relative;
   text-decoration: none;
-  top: 5vh;
+  top: -10vh;
   right: 40vw;
   font-size: 56px;
   background-color: #fff;
@@ -536,6 +536,13 @@ p {
 
 .hidden {
   display: none !important;
+}
+
+.analyseNum {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
 }
 
 .analyseNum p {

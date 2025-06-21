@@ -285,6 +285,7 @@ function getGraphNumber(number, divId) {
     // Graphique custom par rapport au numéro choisi
     const graph = d3.select(`#${divId}`);
     const tau = 2 * Math.PI;
+    const width = 700;
 
     console.log(data.length * 5, " boules tirés");
 
@@ -303,17 +304,16 @@ function getGraphNumber(number, divId) {
 
     const angle = getAngle(number);
 
-
-
     const height = Math.min(1000, width / 2);
 
     const outerRadius = height / 2 - 10;
     const innerRadius = outerRadius * 0.75;
 
-    const svg4 = graph.append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", [0, 0, width, height]);
+    const svg4 = graph
+      .append("svg")
+      .attr("width", 250)
+      .attr("height", height)
+      .attr("viewBox", [0, 0, width, height]);
 
     const g = svg4
       .append("g")
@@ -329,14 +329,14 @@ function getGraphNumber(number, divId) {
       .append("text")
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "middle")
-      .style("fill", "currentColor")
-      .style("font-size", "18px")
+      .style("fill", "#fff")
+      .style("font-size", "64px")
       .text(`${Math.ceil((angle * 100) / 360)}% `);
 
     const background = g
       .append("path")
       .datum({ endAngle: tau })
-      .style("fill", "#19163b")
+      .style("fill", "#fff")
       .attr("d", arc);
 
     function anim() {

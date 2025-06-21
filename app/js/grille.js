@@ -45,6 +45,10 @@ for (let i = 0; i < boules.length - 1; i++) {
     for (let j = 0; j < boules.length - 1; j++) {
       boules[j].style.border = "none";
     }
+    const supGraphe = document.getElementById("percentageNumber_boule2");
+    if (supGraphe) {
+      supGraphe.innerHTML = "";
+    }
     boules[i].style.border = "solid grey 8px";
     analyse(parseInt(boules[i].innerText));
   });
@@ -220,6 +224,7 @@ function selected(event) {
 
 async function analyse(numRecherche) {
   const liste = await loadCSV();
+  getGraphNumber(numRecherche, "percentageNumber_boule2");
   let nbAppa = 0;
   let sommeGagnantsRang1 = 0;
   let dateDerniereAppa = null;
