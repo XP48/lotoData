@@ -8,11 +8,11 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
-  overflow-x: hidden;
 }
 
 body {
   background-color: #19163b;
+  overflow-x: hidden;
 }
 
 header {
@@ -295,14 +295,18 @@ p {
   overflow: hidden;
 }
 
+#section-graph2 {
+  margin-bottom: 100px;
+}
+
 #section-graph3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   text-align: center;
   gap: 20px;
-  margin-bottom: 25px;
 }
 
 #barNbWinDay svg,
@@ -339,8 +343,7 @@ p {
   width: 480px;
 }
 
-#section-graph2 .texte h1,
-#section-graph3 .texte h1 {
+#section-graph2 .texte h1 {
   color: #423f63;
 }
 
@@ -518,4 +521,14 @@ p {
   height: 75px;
   text-align: center;
   color: #19163b;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.analyseNum p {
+  display: flex;
+  gap: 20px;
+  font-size: 36px;
 }

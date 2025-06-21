@@ -10,6 +10,15 @@ const numero_chanceDisabled3 = document.getElementById("numero-chance4");
 const numeroDisabled4 = document.getElementById("numero5");
 const numero_chanceDisabled4 = document.getElementById("numero-chance5");
 
+const btnJouer = document.getElementById("btnJouer");
+const sectionstatsNum1 = document.getElementById("section-statsNum1");
+const sectionstatsNum2 = document.getElementById("section-statsNum2");
+
+const somme = document.getElementById("somme");
+const date = document.getElementById("date");
+
+const nbApparition = document.getElementById("nbApparition");
+
 const numListe = [];
 const numChanceListe = [];
 const MAX_NUM = 5;
@@ -24,8 +33,20 @@ const boules = [
   document.getElementById("boule6"),
 ];
 
-const somme = document.getElementById("somme");
-const date = document.getElementById("date");
+btnJouer.addEventListener("click", async () => {
+  sectionstatsNum1.classList.remove("hidden");
+  sectionstatsNum2.classList.remove("hidden");
+});
+
+for (let i = 0; i < boules.length; i++) {
+  boules[i].addEventListener("click", () => {
+    for (let j = 0; j < boules.length - 1; j++) {
+      boules[j].style.border = "none";
+    }
+    boules[i].style.border = "solid grey 8px";
+    analyse(parseInt(boules[i].innerText));
+  });
+}
 
 numero.addEventListener("click", selected);
 numero_chance.addEventListener("click", selected);
@@ -44,20 +65,14 @@ async function checkCombinaison() {
     ["5n1c", 5701258],
   ]);
 
-  const combinaisons = await loadCSV();
-
+  const liste = await loadCSV();
   const nums = numListe.map((n) => parseInt(n)).sort((a, b) => a - b);
   const chance = parseInt(numChanceListe[0]);
-
   let meilleurGain = 0;
   let meilleureCombinaison = null;
-
-  for (const combinaison of combinaisons) {
-    const columns = combinaison.split(";");
+  for (const ligne of liste) {
+    const columns = ligne.split(";");
     const combiGagnante = columns[10];
-
-    if (!combiGagnante || combiGagnante === "-") continue;
-
     const [boules, numChance] = combiGagnante.split("+");
     const combiBoules = boules.split("-").map((n) => parseInt(n));
     const combiChance = parseInt(numChance);
@@ -69,7 +84,11 @@ async function checkCombinaison() {
       }
     }
 
-    let nbChance = chance === combiChance ? 1 : 0;
+    if (chance == combiChance) {
+      nbChance = 1;
+    } else {
+      nbChance = 0;
+    }
     const key = `${nbCorrects}n${nbChance}c`;
 
     if (gains.has(key)) {
@@ -195,4 +214,21 @@ function selected(event) {
     loadCSV();
     checkCombinaison();
   }
+}
+
+analyse(27);
+
+async function analyse(numRecherche) {
+  const liste = await loadCSV();
+  let compteur = 0;
+  for (const ligne of liste) {
+    const columns = ligne.split(";");
+    const combiGagnante = columns[10];
+    const [boules] = combiGagnante.split("+");
+    const combiBoules = boules.split("-").map((n) => parseInt(n));
+    if (combiBoules.includes(numRecherche)) {
+      compteur++;
+    }
+  }
+  nbApparition.innerText = compteur;
 }
