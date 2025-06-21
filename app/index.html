@@ -4,177 +4,216 @@
     <title>🍀Loto Data</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <script src="../librairie/d3.v7.js"></script>
-    <script src="../app/js/visualisation.js"></script>
-    <script>
-      getGraphNumber(27, "percentageNumber_boule1");
-      getGraphNumber(15, "percentageNumber_boule2");
-    </script>
+    <script src="../test/js/visualisation.js"></script>
   </head>
   <body>
-    <header>
-      <h1>LOTO</h1>
-      <p>Analyse du jeu de loto de la Française des Jeux</p>
-      <div class="anim delay-1">
-        <a href="#section-grille">🚪explorer les données</a>
-        <img
-          class="ball reverse"
-          id="a31"
-          src="./src/img/lotto-ball-31.webp"
-          alt=""
-        />
+    <div class="carousel">
+      <div class="carousel-nav"id="carousel">
+        <button data-target="section-grille" class="active"></button>
+        <button data-target="section-statsNum1"></button>
+        <button data-target="section-statsNum2"></button>
+        <button data-target="section-graph1"></button>
+        <button data-target="section-graph2"></button>
+        <button data-target="section-graph3"></button>
       </div>
-      <img
-        class="ball delay-2"
-        id="a33"
-        src="./src/img/lotto-ball-33.webp"
-        alt=""
-      />
-      <img
-        class="ball reverse delay-0"
-        id="a25"
-        src="./src/img/lotto-ball-25.webp"
-        alt=""
-      />
-      <img
-        class="ball delay-1"
-        id="a22"
-        src="./src/img/lotto-ball-22.webp"
-        alt=""
-      />
-      <img
-        class="ball reverse delay-2"
-        id="a17"
-        src="./src/img/lotto-ball-17.webp"
-        alt=""
-      />
-      <img
-        class="ball delay-0"
-        id="a15"
-        src="./src/img/lotto-ball-15.webp"
-        alt=""
-      />
-      <img
-        class="ball reverse delay-1"
-        id="b31"
-        src="./src/img/lotto-ball-31.webp"
-        alt=""
-      />
-      <img
-        class="ball delay-2"
-        id="b33"
-        src="./src/img/lotto-ball-33.webp"
-        alt=""
-      />
-      <img
-        class="ball reverse delay-0"
-        id="b25"
-        src="./src/img/lotto-ball-25.webp"
-        alt=""
-      />
-      <img
-        class="ball delay-1"
-        id="b22"
-        src="./src/img/lotto-ball-22.webp"
-        alt=""
-      />
-      <img
-        class="ball reverse delay-3"
-        id="b17"
-        src="./src/img/lotto-ball-17.webp"
-        alt=""
-      />
-    </header>
-    <section id="section-grille">
-      <div class="grille">
-        <p class="grille-texte">
-          Pour jouer une grille, <span class="red">cochez 5 numéros</span> et
-          <span class="blue">1 numéro chance</span>
-        </p>
-        <div class="grille-ligne">
-          <div class="grille1">
-            <p>vos 5 n°</p>
-            <div class="numero" id="numero"></div>
-            <p>votre n° chance</p>
-            <div class="numero-chance" id="numero-chance"></div>
-          </div>
-          <div class="grille1">
-            <p id="disabled-back">vos 5 n°</p>
-            <div class="numero disabled" id="numero2"></div>
-            <p id="disabled-back">votre n° chance</p>
-            <div class="numero-chance disabled" id="numero-chance2"></div>
-          </div>
-          <div class="grille1">
-            <p id="disabled-back">vos 5 n°</p>
-            <div class="numero disabled" id="numero3"></div>
-            <p id="disabled-back">votre n° chance</p>
-            <div class="numero-chance disabled" id="numero-chance3"></div>
-          </div>
-          <div class="grille1">
-            <p id="disabled-back">vos 5 n°</p>
-            <div class="numero disabled" id="numero4"></div>
-            <p id="disabled-back">votre n° chance</p>
-            <div class="numero-chance disabled" id="numero-chance4"></div>
-          </div>
-          <div class="grille1">
-            <p id="disabled-back">vos 5 n°</p>
-            <div class="numero disabled" id="numero5"></div>
-            <p id="disabled-back">votre n° chance</p>
-            <div class="numero-chance disabled" id="numero-chance5"></div>
-          </div>
-        </div>
+      <div class="carousel-container">
+        <!-- Section 1 - Header -->
+        <section class="carousel" id="section-header">
+          <header>
+            <h1>LOTO</h1>
+            <p>Analyse du jeu de loto de la Française des Jeux</p>
+            <div class="anim delay-1">
+              <a href="#section-grille">🚪explorer les données</a>
+              <img
+                class="ball reverse"
+                id="a31"
+                src="./src/img/lotto-ball-31.webp"
+                alt=""
+              />
+            </div>
+            <div id="imgballs">
+              <img
+                class="ball delay-2"
+                id="a33"
+                src="./src/img/lotto-ball-33.webp"
+                alt=""
+              />
+              <img
+                class="ball reverse delay-0"
+                id="a25"
+                src="./src/img/lotto-ball-25.webp"
+                alt=""
+              />
+              <img
+                class="ball delay-1"
+                id="a22"
+                src="./src/img/lotto-ball-22.webp"
+                alt=""
+              />
+              <img
+                class="ball reverse delay-2"
+                id="a17"
+                src="./src/img/lotto-ball-17.webp"
+                alt=""
+              />
+              <img
+                class="ball delay-0"
+                id="a15"
+                src="./src/img/lotto-ball-15.webp"
+                alt=""
+              />
+              <img
+                class="ball reverse delay-1"
+                id="b31"
+                src="./src/img/lotto-ball-31.webp"
+                alt=""
+              />
+              <img
+                class="ball delay-2"
+                id="b33"
+                src="./src/img/lotto-ball-33.webp"
+                alt=""
+              />
+              <img
+                class="ball reverse delay-0"
+                id="b25"
+                src="./src/img/lotto-ball-25.webp"
+                alt=""
+              />
+              <img
+                class="ball delay-1"
+                id="b22"
+                src="./src/img/lotto-ball-22.webp"
+                alt=""
+              />
+              <img
+                class="ball reverse delay-3"
+                id="b17"
+                src="./src/img/lotto-ball-17.webp"
+                alt=""
+              />
+            </div>
+          </header>
+        </section>
+        <!-- Section 2 grille avec les choix-->
+        <section class="carousel" id="section-grille">
+            <div class="grille">
+              <p class="grille-texte">
+                Pour jouer une grille, <span class="red">cochez 5 numéros</span> et
+                <span class="blue">1 numéro chance</span>
+              </p>
+              <div class="grille-ligne">
+                <div class="grille1">
+                  <p>vos 5 n°</p>
+                  <div class="numero" id="numero"></div>
+                  <p>votre n° chance</p>
+                  <div class="numero-chance" id="numero-chance"></div>
+                </div>
+                <div class="grille1">
+                  <p id="disabled-back">vos 5 n°</p>
+                  <div class="numero disabled" id="numero2"></div>
+                  <p id="disabled-back">votre n° chance</p>
+                  <div class="numero-chance disabled" id="numero-chance2"></div>
+                </div>
+                <div class="grille1">
+                  <p id="disabled-back">vos 5 n°</p>
+                  <div class="numero disabled" id="numero3"></div>
+                  <p id="disabled-back">votre n° chance</p>
+                  <div class="numero-chance disabled" id="numero-chance3"></div>
+                </div>
+                <div class="grille1">
+                  <p id="disabled-back">vos 5 n°</p>
+                  <div class="numero disabled" id="numero4"></div>
+                  <p id="disabled-back">votre n° chance</p>
+                  <div class="numero-chance disabled" id="numero-chance4"></div>
+                </div>
+                <div class="grille1">
+                  <p id="disabled-back">vos 5 n°</p>
+                  <div class="numero disabled" id="numero5"></div>
+                  <p id="disabled-back">votre n° chance</p>
+                  <div class="numero-chance disabled" id="numero-chance5"></div>
+                </div>
+              </div>
+            </div>
+            <a href="#section-statsNum1" id="btnJouer">Jouer !</a>
+        </section>
+        <!-- Section 3 - Stats -->
+        <section class="carousel" id="section-statsNum1">
+            <div class="back gain"></div>
+            <h1>Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€</h1>
+            <video loop autoplay><source src="./src/1pMt.mp4" /></video>
+            <h1>le <span id="date"></span></h1>
+            <a href="#section-statsNum2">👇</a>
+          </section>
+        </section>
+        <!-- Section 4 - Stats 2 améliorée -->
+        <section class="carousel hidden" id="section-statsNum2">
+            <h1>Analysons maintenant vos numéros</h1>
+            <div class="boules">
+              <div id="boule1"></div>
+              <div id="boule2"></div>
+              <div id="boule3"></div>
+              <div id="boule4"></div>
+              <div id="boule5"></div>
+              <div id="boule6"></div>
+            </div>
+            <!-- <h1>Selectionnez un numéro pour obtenir son analyse</h1> -->
+            <div class="analyseNum">
+              <p>
+                Le numéro est apparu <span id="nbApparition"></span> fois depuis
+                novembre 2019,
+              </p>
+              <p>
+                Il a permis a <span id="nbJoueurs"></span> joueur(s) de gagner plus
+                d'un milion d'euro,
+              </p>
+              <p>
+                Ce numéro est apparu pour la dernière fois (Mars 2025 au plus tard) le
+                <span id="dateDer"></span>.
+              </p>
+            </div>
+            <!-- <div id="percentageNumber_boule1"></div>
+            <div id="percentageNumber_boule2"></div> -->
+            <a href="#section-graph1">👇</a>
+        </section>
+        <!-- Section 5 - Graph 1 -->
+        <section class="carousel" id="section-graph1">
+            <div class="back"></div>
+            <div id="barNbWinDay"></div>
+            <div class="texte">
+              <h1>Durant quel jour de la semaine faut-il jouer ?</h1>
+              <p>
+                nb gagnant par jours, plus le samedi mais sans doute plus de jouerus
+              </p>
+            </div>
+            <a href="#section-graph2">👇</a>
+        </section>
+        <!-- Section 6 - Graph 2 -->
+        <section class="carousel" id="section-graph2">
+            <div class="texte">
+              <h1>Quel numéro chance choisir ?</h1>
+              <p>nb apparition de nb chance</p>
+            </div>
+            <div id="barNumChance"></div>
+            <a href="#section-graph3">👇</a>
+        </section>
+        <!-- Section 7 - Graph 3 -->
+        <section class="carousel" id="section-graph3">
+            <div class="back"></div>
+            <div class="texte">
+              <h1>Quel numéro choisir ?</h1>
+            </div>
+            <div id="barNum"></div>
+            <p>après analyse approfondie, li faut choisir numero</p>
+        </section>
+          <section id="section-graph"></section>
+          <script>
+            getGraphNumber(27, "percentageNumber_boule1");
+            getGraphNumber(15, "percentageNumber_boule2");
+          </script>
+        </section>
       </div>
-      <a href="#section-statsNum1">Jouer !</a>
-    </section>
-    <section id="section-statsNum1">
-      <div class="back gain"></div>
-      <h1>Avec ces numéros, vous auriez pu gagner <span id="somme"></span>€</h1>
-      <video loop autoplay><source src="./src/1pMt.mp4" /></video>
-      <h1>le <span id="date"></span></h1>
-      <a href="#section-statsNum2">👇</a>
-    </section>
-    <section id="section-statsNum2">
-      <h1>Analysons maintenant vos numéros</h1>
-      <div class="boules">
-        <div id="boule1"></div>
-        <div id="boule2"></div>
-        <div id="boule3"></div>
-        <div id="boule4"></div>
-        <div id="boule5"></div>
-        <div id="boule6"></div>
-      </div>
-      <div id="percentageNumber_boule1"></div>
-      <div id="percentageNumber_boule2"></div>
-      <a href="#section-graph1">👇</a>
-    </section>
-    <section id="section-graph1">
-      <div class="back"></div>
-      <div id="barNbWinDay"></div>
-      <div class="texte">
-        <h1>Durant quel jour de la semaine faut-il jouer ?</h1>
-        <p>
-          nb gagnant par jours, plus le samedi mais sans doute plus de jouerus
-        </p>
-      </div>
-      <a href="#section-graph2">👇</a>
-    </section>
-    <section id="section-graph2">
-      <div class="texte">
-        <h1>Quel numéro chance choisir ?</h1>
-        <p>nb apparition de nb chance</p>
-      </div>
-      <div id="barNumChance"></div>
-      <a href="#section-graph3">👇</a>
-    </section>
-    <section id="section-graph3">
-      <div class="texte">
-        <h1>Quel numéro choisir ?</h1>
-      </div>
-      <div id="barNum"></div>
-      <p>après analyse approfondie, li faut choisir numero</p>
-    </section>
-    <section id="section-graph1">
-      <div class="back"></div>
-    </section>
   </body>
-  <script src="../app/js/grille.js"></script>
+  <script src="../test/js/main.js"></script>
+  <script src="../test/js/grille.js"></script>
 </html>
