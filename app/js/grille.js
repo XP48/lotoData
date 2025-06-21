@@ -18,6 +18,8 @@ const somme = document.getElementById("somme");
 const date = document.getElementById("date");
 
 const nbApparition = document.getElementById("nbApparition");
+const nbJoueurs = document.getElementById("nbJoueurs");
+const dateDer = document.getElementById("dateDer");
 
 const numListe = [];
 const numChanceListe = [];
@@ -136,7 +138,7 @@ function parseCSV(csvText) {
   return results;
 }
 
-for (let index = 1; index <= 50; index++) {
+for (let index = 1; index < 50; index++) {
   let num = document.createElement("div");
   num.classList.add("case");
   num.innerText = index;
@@ -216,19 +218,36 @@ function selected(event) {
   }
 }
 
-analyse(27);
-
 async function analyse(numRecherche) {
   const liste = await loadCSV();
-  let compteur = 0;
+  let nbAppa = 0;
+  let sommeGagnantsRang1 = 0;
+  let dateDerniereAppa = null;
+  let dateAuj = new Date(0);
+
   for (const ligne of liste) {
     const columns = ligne.split(";");
     const combiGagnante = columns[10];
     const [boules] = combiGagnante.split("+");
     const combiBoules = boules.split("-").map((n) => parseInt(n));
+
     if (combiBoules.includes(numRecherche)) {
-      compteur++;
+      nbAppa++;
+      const nbGagnantsRang1 = parseInt(columns[11]);
+      sommeGagnantsRang1 += nbGagnantsRang1;
+      const [jour, mois, annee] = columns[2].split("/");
+      const dateCourante = new Date(`${annee}-${mois}-${jour}`);
+
+      if (dateCourante > dateAuj) {
+        dateAuj = dateCourante;
+        dateDerniereAppa = columns[2];
+      }
     }
   }
-  nbApparition.innerText = compteur;
+
+  nbApparition.innerText = nbAppa;
+  nbJoueurs.innerText = sommeGagnantsRang1;
+  dateDer.innerText = dateDerniereAppa;
+  document.getElementById("textAnalyse").classList.add("hidden");
+  document.getElementById("analyseNum").classList.remove("hidden");
 }

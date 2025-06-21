@@ -339,8 +339,19 @@ p {
   font-size: 36px;
 }
 
+.texte p {
+  font-size: 25px;
+}
+
+.texteP {
+  width: 60%;
+}
+
 .texte {
   width: 480px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 #section-graph2 .texte h1 {
@@ -484,7 +495,7 @@ p {
 #section-statsNum2 a {
   position: relative;
   text-decoration: none;
-  top: 20vh;
+  top: 5vh;
   right: 40vw;
   font-size: 56px;
   background-color: #fff;
@@ -533,7 +544,6 @@ p {
   font-size: 36px;
 }
 
-/* Add this new CSS for carousel navigation */
 .carousel-nav {
   position: fixed;
   right: 20px;
@@ -576,4 +586,78 @@ p {
   height: 100vh;
   width: 100vw;
   position: relative;
+}
+
+video {
+  border-radius: 12px;
+}
+
+#section-info {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bandeau {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+  color: black;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.bandeau p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: defilement 10s linear infinite;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+}
+
+@keyframes defilement {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.projet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.projet p {
+  font-size: 36px;
+  width: 60%;
+}
+
+.projet h1 {
+  font-size: 48px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  color: #050319;
+}
+
+.projet h3 {
+  font-size: 24px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  color: #050319;
 }
