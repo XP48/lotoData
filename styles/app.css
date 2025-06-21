@@ -1,0 +1,222 @@
+@charset "utf-8";
+@import "jetbrains-mono.css";
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* -------------- Global -------------- */
+
+* {
+	font-family: 'JetBrains Mono';
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+:root {
+  --header-height: 80px;
+  --footer-height: 180px;
+
+  --section-padding-h: 10px;
+  --section-padding-w: 15px;
+}
+
+/* ------------- Tailwind ------------- */
+
+@theme {
+  "primary": "#3b82f6",
+  "primary-focus": "#2563eb",
+  "primary-content": "#ffffff",
+  "secondary": "#fbbf24",
+  "secondary-focus": "#f59e0b",
+  "secondary-content": "#ffffff",
+  "accent": "#4ade80",
+  "accent-focus": "#22c55e",
+  "accent-content": "#ffffff",
+  "neutral": "#3d4451",
+  "neutral-focus": "#2a303c",
+  "neutral-content": "#ffffff",
+  "base-100": "#ffffff",
+  "base-200": "#f9fafb",
+  "base-300": "#d1d5db",
+  "base-content": "#1f2937"
+}
+
+/* ----- Header, footer and main ----- */
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+body > header {
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  background-color: black;
+  color: white;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+
+  height: auto;
+  min-height: 56px;
+}
+
+body > footer {
+  width: 100%;
+
+  padding: 1rem 2rem;
+
+  background-color: black;
+  color: white;
+
+  height: auto;
+  min-height: 120px;
+}
+
+body > main {
+  display: flex;
+  flex-direction: column;
+  
+  flex: 1;
+}
+
+#bg-hero {
+  background-image: url(https://c1.wallpaperflare.com/path/672/499/652/beer-a-pint-cup-alcohol-9a9f1bdeba98cc84d1b4ee3d2dbc21c1.jpg);
+  filter: brightness(0.25);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive adjustments for header/footer */
+@media (max-width: 640px) {
+  body > header, body > footer {
+    padding: 0.5rem 1rem;
+    min-height: 48px;
+  }
+}
+
+/* ------- Visualization sections ----- */
+
+#carousel {
+  height: 100vh;
+  overflow-y: visible;
+}
+
+.viz-section {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 15px;
+
+  padding: var(--section-padding-h) var(--section-padding-w);
+  width: calc(100% - 2 * var(--section-padding-w));
+  height: calc(100% - 2 * var(--section-padding-h));
+}
+
+.viz-desc {
+  grid-column-start: initial;
+  grid-column-end: span 2;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+
+  background-color: black;
+  color: white;
+}
+
+.viz-desc > h2 {
+  flex: 0;
+
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.viz-text {
+  flex: 3;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.viz-text > p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.viz-text a {
+  color: aquamarine;
+  text-decoration: underline;
+}
+
+.viz-text a:hover {
+  color: lightpink;
+  transition: 0.3s ease-in-out;
+}
+
+.stats-showcase {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100%;
+}
+
+.stats-showcase > .stat {
+  width: min-content;
+  height: min-content;
+  margin: 15px 20px;
+}
+
+.viz-graph {
+  grid-column-start: inherit;
+  grid-column-end: span 5;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.viz-graph > svg {
+  border: solid black 2px;
+  border-radius: 10px;
+
+  width: 100%;
+  max-height: calc(100vh - 2 * var(--section-padding-h));;
+}
+
+#viz-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+
+  padding: var(--section-padding-h) var(--section-padding-w);
+  width: calc(100% - 2 * var(--section-padding-w));
+  height: calc(100% - 2 * var(--section-padding-h));
+
+  background-color: black;
+  color: white;
+
+  text-align: center;
+}
