@@ -9,7 +9,7 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     marginRight=60;
     marginBottom=20;
     marginTop=45
-    height=700;
+    height=1000;
     const scaleX = d3.scaleBand()
         .domain(["1","2","3","4","5","6","7","8","9", "10"])
         .range([marginLeft, width - marginRight])
