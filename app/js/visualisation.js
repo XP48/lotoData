@@ -9,7 +9,7 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
     marginRight=60;
     marginBottom=20;
     marginTop=45
-    height=1000;
+    height=700;
     const scaleX = d3.scaleBand()
         .domain(["1","2","3","4","5","6","7","8","9", "10"])
         .range([marginLeft, width - marginRight])
@@ -150,8 +150,8 @@ d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
         svg2.selectAll("rect")
             .transition()
             .duration(1000)
-            .attr("y", d => scaleY(d[1]))
-            .attr("height", d => height - scaleY(d[1]))
+            .attr("y", d => scaleY2(d[1]))
+            .attr("height", d => height - scaleY2(d[1]))
             .delay((d,i) => i*100)
             .style("fill", "rgb(106,194,235)");
     }
@@ -301,7 +301,7 @@ function getGraphNumber(number, divId) {
         .style("fill", "#19163b")
         .attr("d", arc);
 
-    function anim() {
+    function anim4() {
         const foreground = g.append("path")
             .datum({endAngle: 1 * tau})
             .style("fill", "rgb(106,194,235)")
@@ -318,8 +318,8 @@ function getGraphNumber(number, divId) {
             });
     }
 
-    anim()
-    document.getElementById(`${divId}`).addEventListener("click", anim)
+    anim4()
+    document.getElementById(`${divId}`).addEventListener("click", anim4)
 
       
 
