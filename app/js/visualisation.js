@@ -1,24 +1,19 @@
-d3.dsv(";", "./src/data/loto_201911.csv").then(function (data) {
-  const barNumChance = d3.select("#barNumChance");
+d3.dsv(";", "./src/data/loto_201911.csv").then(function(data) {
+    const barNumChance = d3.select("#barNumChance")
 
-  const numeros_chance = d3.rollup(
-    data,
-    (v) => d3.count(v, (d) => d.numero_chance),
-    (d) => d.numero_chance
-  );
-  console.log(numeros_chance);
+    const numeros_chance = d3.rollup(data, v => d3.count(v, d => d.numero_chance), d => d.numero_chance)
+    console.log(numeros_chance)
 
-  marginLeft = 50;
-  width = 700;
-  marginRight = 60;
-  marginBottom = 20;
-  marginTop = 45;
-  height = 700;
-  const scaleX = d3
-    .scaleBand()
-    .domain(["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"])
-    .range([marginLeft, width - marginRight])
-    .padding(0.3);
+    marginLeft=50;
+    width=700;
+    marginRight=60;
+    marginBottom=20;
+    marginTop=45
+    height=1000;
+    const scaleX = d3.scaleBand()
+        .domain(["1","2","3","4","5","6","7","8","9", "10"])
+        .range([marginLeft, width - marginRight])
+        .padding(0.3);
 
   const scaleY = d3.scaleLinear().domain([0, 120]).range([height, 0]);
 
