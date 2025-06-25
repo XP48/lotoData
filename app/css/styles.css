@@ -123,9 +123,8 @@ p {
   width: 200px;
 }
 
-/* Animation des boulles sur page d'accueil */
+/* Animation des boules (rotate fonctionne plus) */
 
-/* Supprimez la classe .anim - elle n'est pas nécessaire */
 .ball {
   position: absolute;
   animation: rotate 45s linear infinite, float 5s ease-in-out infinite;
@@ -135,7 +134,6 @@ p {
   animation: rotate-inverse 50s linear infinite, float 5s ease-in-out infinite;
 }
 
-/* Conservez les délais */
 .delay-0 {
   animation-delay: 0s;
 }
@@ -178,6 +176,8 @@ p {
     transform: rotate(-360deg);
   }
 }
+
+/* Partie Simulateur */
 
 #section-grille {
   height: 100vh;
@@ -284,6 +284,8 @@ p {
   border-radius: 100%;
 }
 
+/* Section des graphes */
+
 #section-graph1,
 #section-graph2 {
   display: flex;
@@ -335,7 +337,7 @@ p {
 .texte h1 {
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
-  color: #19163b;
+  color: #0e0c22;
   font-size: 36px;
 }
 
@@ -355,7 +357,7 @@ p {
 }
 
 #section-graph2 .texte h1 {
-  color: #423f63;
+  color: #817cb6;
 }
 
 .red {
@@ -666,5 +668,5 @@ video {
   font-size: 24px;
   font-family: "League Spartan", sans-serif;
   font-weight: 700;
-  color: #050319;
+  color: #050411;
 }
