@@ -20,6 +20,8 @@ const date = document.getElementById("date");
 const nbApparition = document.getElementById("nbApparition");
 const nbJoueurs = document.getElementById("nbJoueurs");
 const dateDer = document.getElementById("dateDer");
+const pourcentageAppa = document.getElementById("pourcentageAppa");
+
 
 const numListe = [];
 const numChanceListe = [];
