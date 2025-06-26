@@ -356,3 +356,19 @@ function getGraphNumber(number, divId) {
 
 });
 }
+
+
+// window.addEventListener('scroll', function () {
+//   const button = document.getElementById('Return-Top');
+//   const scrollThreshold = 2 * window.innerHeight; // 2 pages
+// console.log("aaaaaaaaaaaaaaa")
+//   if (window.scrollY > scrollThreshold) {
+//     button.style.display = 'block';
+//   } else {
+//     button.style.display = 'none';
+//   }
+// });
+
+// document.getElementById('Return-Top').addEventListener('click', function () {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// });

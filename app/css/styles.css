@@ -571,19 +571,7 @@ p {
   gap: 10px;
 }
 
-.carousel-nav button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-.carousel-nav button.active {
-  background: white;
-}
 
 .carousel-container {
   scroll-snap-type: y mandatory;
@@ -679,6 +667,20 @@ video {
   color: #817cb6;
 }
 
-/* #Return-top */
+/* #Return-Top{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.3s ease;
+} */
 
 
